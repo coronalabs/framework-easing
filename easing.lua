@@ -41,7 +41,7 @@ end
 easing.outExpo = function( t, tMax, start, delta )
 	return t==tMax
 		and (start + delta)
-		or (start + delta*1.001*(-math.pow(2, -10*t/tMax) + 1))
+		or (start + delta*(-math.pow(2, -10*t/tMax) + 1))
 end
 
 easing.inOutExpo = function( t, tMax, start, delta )
