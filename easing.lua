@@ -185,7 +185,7 @@ easing.outExpo = function( t, tMax, start, delta )
 	if t == tMax then
 		return start + delta
 	else
-		return delta * 1.001 * ( -pow( 2, -10 * t / tMax ) + 1 ) + start
+		return delta * ( -pow( 2, -10 * t / tMax ) + 1 ) + start
 	end
 end
 
