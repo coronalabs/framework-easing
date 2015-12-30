@@ -33,7 +33,7 @@ local easing = {}
 
 -- per convention the params are to be called:
 --t, tMax, start, delta
--- actual correspondence is 
+-- actual correspondence is
 
 -- correspondence goes back to:
 -- c - delta
@@ -365,12 +365,12 @@ easing.outInBounce = function( t, tMax, start, delta )
 	end
 end
 
-easing.continuousLoop = function( t, tMax, start, delta )
-	local interval = t / tMax 
+easing.continuousLoop = function( t, tMax, start, delta)
+	local interval = t / tMax
 	if interval < 0.5 then
-		return ( ( delta - start ) * ( interval + interval ) ) + start
+		return start + delta * interval * 2
 	else
-		return ( ( start - delta ) * ( ( interval - 0.5 ) * 2 ) ) + delta
+		return start + delta * ( 1 - interval ) * 2
 	end
 end
 
