@@ -1,12 +1,14 @@
 -------------------------------------------------------------------------------
 --
+-- Corona Labs
+--
 -- easing.lua
 --
--- Copyright (C) 2013 Corona Labs Inc. All Rights Reserved.
+-- Code is MIT licensed; see https://www.coronalabs.com/links/code/license
 --
 -------------------------------------------------------------------------------
 
--- NOTE: easing is assigned to the global var "easing" in init.lua.
+-- NOTE: easing is assigned to the global var "easing" on startup.
 -- This file should follows standard Lua module conventions
 
 -----------------------------------------------------------------------------------------
