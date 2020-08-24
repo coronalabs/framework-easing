@@ -71,6 +71,14 @@ easing.inOutQuad = function( t, tMax, start, delta )
 	end
 end
 
+easing.outInQuad = function( t, tMax, start, delta )
+	if t < tMax/2 then
+		return easing.outQuad(t*2, tMax, start, delta/2)
+	else
+		return easing.inQuad((t*2)-tMax, tMax, start+delta/2, delta/2)
+	end
+end
+
 easing.inCubic  = function( t, tMax, start, delta )
 	t = t / tMax
 	return delta * pow( t, 3 ) + start
@@ -176,11 +184,11 @@ easing.outInSine = function( t, tMax, start, delta )
 end
 
 easing.inExpo = function( t, tMax, start, delta )
-        if t == 0 then
-                return start
-        else
-                return delta * pow( 2, 10 * ( t / tMax - 1 ) ) + start - delta * 0.001
-        end
+	if t == 0 then
+		return start
+	else
+		return delta * pow( 2, 10 * ( t / tMax - 1 ) ) + start - delta * 0.001
+	end
 end
 
 easing.outExpo = function( t, tMax, start, delta )
@@ -276,6 +284,7 @@ easing.inOutElastic = function( t, tMax, start, delta, a, p )
 	if t == 2 then return start + delta end
 	if not p then p = tMax * ( 0.3 * 1.5 ) end
 	if not a then a = 0 end
+	local s
 	if not a or a < abs( delta ) then
 		a = delta
 		s = p / 4
